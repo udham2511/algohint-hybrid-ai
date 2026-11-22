@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+* {
+  scrollbar-color: #475569 #0f172a;
+  scrollbar-width: thin;
+}
+
+button {
+  cursor: pointer;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0f172a;
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #475569;
+  border: 2px solid #0f172a;
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+.app-toast {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  width: 360px;
+  max-width: calc(100vw - 2rem);
+  padding: 0.875rem 0.875rem 0.875rem 1rem;
+  border: 1px solid #334155;
+  border-left: 3px solid #64748b;
+  border-radius: 0.875rem;
+  background: linear-gradient(135deg, #111c30 0%, #0b1220 100%);
+  color: #e2e8f0;
+  box-shadow:
+    0 16px 40px rgb(2 6 23 / 60%),
+    0 2px 8px rgb(2 6 23 / 35%);
+  font-size: 0.875rem;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    border-color 180ms ease;
+}
+
+.app-toast[data-type="success"] {
+  border-left-color: #34d399;
+}
+
+.app-toast[data-type="error"] {
+  border-left-color: #fb7185;
+}
+
+.app-toast[data-type="loading"] {
+  border-left-color: #818cf8;
+}
+
+.app-toast[data-visible="false"] {
+  opacity: 0;
+  transform: translateX(0.75rem) scale(0.98);
+}
+
+.app-toast-icon {
+  display: flex;
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(148 163 184 / 18%);
+  border-radius: 0.625rem;
+  background: rgb(148 163 184 / 8%);
+  color: #cbd5e1;
+}
+
+.app-toast[data-type="success"] .app-toast-icon {
+  border-color: rgb(52 211 153 / 20%);
+  background: rgb(16 185 129 / 12%);
+  color: #34d399;
+}
+
+.app-toast[data-type="error"] .app-toast-icon {
+  border-color: rgb(251 113 133 / 22%);
+  background: rgb(244 63 94 / 12%);
+  color: #fb7185;
+}
+
+.app-toast[data-type="loading"] .app-toast-icon {
+  border-color: rgb(129 140 248 / 22%);
+  background: rgb(99 102 241 / 12%);
+  color: #a5b4fc;
+}
+
+.app-toast-copy {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 0.125rem;
+}
+
+.app-toast-title {
+  color: #f8fafc;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.app-toast[data-type="success"] .app-toast-title {
+  color: #6ee7b7;
+}
+
+.app-toast[data-type="error"] .app-toast-title {
+  color: #fda4af;
+}
+
+.app-toast[data-type="loading"] .app-toast-title {
+  color: #c7d2fe;
+}
+
+.app-toast-message {
+  color: #cbd5e1;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.app-toast-spinner {
+  animation: app-toast-spin 1s linear infinite;
+}
+
+@keyframes app-toast-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app-toast-close {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  color: #64748b;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.app-toast-close:hover {
+  border-color: #334155;
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+.app-toast-close:focus-visible {
+  outline: 2px solid #818cf8;
+  outline-offset: 2px;
+}
+
+.code-editor .cm-theme {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+}
+
+.code-editor .cm-editor {
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #0f172a;
+  font-size: 0.875rem;
+}
+
+.code-editor .cm-scroller {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  line-height: 1.5rem;
+  min-height: 0;
+  height: 100%;
+  overflow: auto !important;
+}
+
+.code-editor .cm-gutters {
+  border-right-color: #1e293b;
+  background-color: #0f172a;
+}
+
+.code-editor .cm-activeLine,
+.code-editor .cm-activeLineGutter {
+  background-color: rgb(30 41 59 / 60%);
+}
