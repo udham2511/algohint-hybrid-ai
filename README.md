@@ -119,4 +119,4 @@ src/
 
 ## 👤 Author
 
-Made with 💻 and ☕ by [@udham2511]("https://www.github.com/udham2511")
+Made with 💻 and ☕ by [@udham2511](https://www.github.com/udham2511)
